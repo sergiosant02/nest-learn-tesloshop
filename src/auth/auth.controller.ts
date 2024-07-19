@@ -7,6 +7,7 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { Auth } from './decorators/auth.decorator';
 import { GetRawHeader } from './decorators/get-rawHeader.decorator';
@@ -18,6 +19,7 @@ import { User } from './entities/user.entity';
 import { Role } from './interfaces/role.interface';
 
 @Controller('auth')
+@ApiTags('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
